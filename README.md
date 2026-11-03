@@ -16,7 +16,7 @@ available at:
 Open `index.html` in a web browser. The site uses static HTML, CSS, and JavaScript; no package
 installation or build step is required.
 
-The **From the campaign** section lists 57 reviewed BBPCA articles, ordered by Facebook views
+The **From the campaign** section lists 58 reviewed BBPCA articles, ordered by Facebook views
 (most viewed first). It opens with an **article index** that can be sorted (most viewed, article number, title A–Z or
 Z–A) and links to each article. Nine articles show at first and a **Show more** button loads the
 rest. Articles carry no dates or images. Article text is stored in `campaign-articles-data.js`.
