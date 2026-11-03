@@ -565,5 +565,17 @@ window.campaignArticles = [
     "paragraphs": [
       "We Have the Power to Regulate AI! We’ve all heard the terrifying predictions: \"In 10 years, AI will take all the jobs and there’s nothing we can do about it.\" BS! Every day, metrics from agencies like the Department of Labor are weaponized by tech lobbyists and politicians to push a deregulation agenda. They treat these numbers like a weather forecast—as if a massive wave of job displacement is a natural disaster we just have to sit back and endure. But let’s be clear: this is a manufactured narrative. The public and our policymakers are being brainwashed into believing that artificial intelligence is an unstoppable, uncontrollable force. Governments have all the power in the world to regulate it. Those labor statistics shouldn’t be used as an excuse to throw our hands up and deregulate. They should be the exact catalyst we useto pass strict IT regulations, mandate corporate guardrails, and protect workers' rights. AI doesn't just \"happen\" to us. It is built, funded, and deployed by choice. It’s time to stop acting helpless, reject the deregulation trap, and start using our policy power to shape a future where technology serves people—not just corporate bottom lines."
     ]
+  },
+  {
+    "post": "56",
+    "title": "Helping the Little Guy",
+    "paragraphs": [
+      "When corporate-backed think tanks try to tell you that deregulating the beauty and barber industry is about \"helping the little guy,\" they are counting on you not knowing your history.",
+      "During the Civil Rights Movement, the beauty salon wasn't just a place to get hair done. It was an economic fortress.",
+      "When white employers fired black maids, sharecroppers, and laborers for trying to vote, black beauticians were untouchable. Why? Because they owned their shops, controlled their capital, and served their own community. They couldn't be blacklisted by the corporate establishment.",
+      "They used that financial autonomy to fund the NAACP, bail out protestors, and organize the underground movement.",
+      "Today, corporate special interests (like the Koch-funded groups) want to strip away licensing and professional standards under the guise of \"cutting red tape\" and \"AI disruption.\" But history tells us the truth: Stripping away professional standards doesn't liberate workers—it devalues specialized labor, crashes your pricing power, and turns a path to true wealth-building into a race-to-the-bottom gig economy.",
+      "We aren't letting them corporate-franchise our trades or siphon wealth out of our communities. Professional standards keep the power exactly where it belongs: in the hands of the licensed professionals."
+    ]
   }
 ];
