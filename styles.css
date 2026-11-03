@@ -1209,3 +1209,68 @@ h2 em {
   margin-bottom: 0.4rem;
   break-inside: avoid;
 }
+
+.article-sources {
+  margin-top: 3.5rem;
+}
+
+.article-sources h3 {
+  margin: 0 0 0.5rem;
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.article-sources > p {
+  max-width: 46rem;
+  margin: 0 0 1.5rem;
+  color: var(--muted-ink);
+}
+
+.article-sources-list details {
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  padding: 0.85rem 0;
+}
+
+.article-sources-list details:last-child {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.article-sources-list summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.article-sources-list summary span {
+  color: var(--muted-ink);
+  font-size: 0.78rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  margin-right: 0.6rem;
+}
+
+.article-sources-list ul {
+  margin: 0.9rem 0 0.3rem;
+  padding-left: 1.2rem;
+}
+
+.article-sources-list li {
+  margin-bottom: 0.7rem;
+}
+
+.article-sources-list li p {
+  margin: 0.2rem 0 0;
+  color: var(--muted-ink);
+  font-size: 0.95rem;
+}
+
+.article-sources-list a {
+  color: var(--coral);
+  overflow-wrap: anywhere;
+}
+
+.article-sources-list .read-article {
+  display: inline-block;
+  margin-top: 0.4rem;
+  font-size: 0.9rem;
+}
