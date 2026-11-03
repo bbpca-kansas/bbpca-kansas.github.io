@@ -1860,6 +1860,71 @@ window.articleSources = [
     ]
   },
   {
+    "post": "56",
+    "sources": [
+      {
+        "name": "Kansas Statutes, K.S.A. 74-2701 (Kansas Board of Cosmetology)",
+        "url": "https://www.kslegislature.gov/li/b2025_26/statute/074_000_0000_chapter/074_027_0000_article/074_027_0001_section/074_027_0001_k/",
+        "supports": "Statutory membership and composition of the Kansas Board of Cosmetology. Consult the current statute for seat allocations."
+      },
+      {
+        "name": "Kansas Statutes, K.S.A. 74-2704 (Cosmetology Fee Fund)",
+        "url": "https://www.kslegislature.gov/li/b2025_26/statute/074_000_0000_chapter/074_027_0000_article/074_027_0004_section/074_027_0004_k/",
+        "supports": "The statutory Cosmetology Fee Fund and the disposition of cosmetology-related fees."
+      },
+      {
+        "name": "Kansas Legislative Research Department, Board of Cosmetology Budget Report",
+        "url": "https://klrd.gov/wp-content/uploads/2026/01/Board-of-Cosmetology-1.pdf",
+        "supports": "Official agency budget information. Refer to the report for the budget figures and funding details cited in the article."
+      },
+      {
+        "name": "Kansas Board of Cosmetology, Annual Reports",
+        "url": "https://kboc.ks.gov/resources/publications",
+        "supports": "Agency publications and annual reports for board operations and reported licensee information."
+      },
+      {
+        "name": "Kansas Board of Cosmetology, Statutes and Regulations",
+        "url": "https://kboc.ks.gov/resources/statutes-regulations",
+        "supports": "Kansas cosmetology licensing statutes, regulations, and professional categories overseen by the board."
+      },
+      {
+        "name": "Kansas Board of Barbering, Statutes",
+        "url": "https://www.kansas.gov/kbob/statutes.html",
+        "supports": "Statutory framework for the independent Kansas Board of Barbering and barber licensing."
+      }
+    ]
+  },
+  {
+    "post": "57",
+    "sources": [
+      {
+        "name": "University of Illinois Press, Beauty Shop Politics",
+        "url": "https://www.press.uillinois.edu/books/?id=p076961",
+        "supports": "Dr. Tiffany M. Gill's book on African American women's activism in the beauty industry, including beauticians' role in political organizing."
+      },
+      {
+        "name": "Dr. Tiffany M. Gill, Books",
+        "url": "https://www.tiffanymgill.com/books",
+        "supports": "Author's official publication information for Beauty Shop Politics."
+      },
+      {
+        "name": "NPR, Black-Owned Beauty Shops Groom Political Activism",
+        "url": "https://www.npr.org/2011/12/28/144381812/black-owned-beauty-shops-groom-political-activism",
+        "supports": "Historical reporting on Black-owned beauty shops as spaces for community organizing and political activism."
+      },
+      {
+        "name": "National Museum of African American History and Culture, Barbershops and Beauty Shops as Community Spaces",
+        "url": "https://nmaahc.si.edu/explore/stories/barbershops-and-beauty-shops-community-spaces",
+        "supports": "Historical context on barbershops and beauty shops as community spaces."
+      },
+      {
+        "name": "Smithsonian Magazine, The Black Barbershop and Community History",
+        "url": "https://www.smithsonianmag.com/history/the-black-barbershop-a-history-of-the-black-barbershop-180982038/",
+        "supports": "Historical context on Black barbershops as community gathering places and centers of civic engagement."
+      }
+    ]
+  },
+  {
     "post": "58",
     "sources": [
       {
