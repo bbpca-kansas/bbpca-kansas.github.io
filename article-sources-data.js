@@ -1871,6 +1871,11 @@ window.articleSources = [
         "name": "Dr. Tiffany M. Gill, Books",
         "url": "https://www.tiffanymgill.com/books",
         "supports": "Author's official page for her books and publication information."
+      },
+      {
+        "name": "NPR, Black-Owned Beauty Shops Groom Political Activism",
+        "url": "https://www.npr.org/2011/12/28/144381812/black-owned-beauty-shops-groom-political-activism",
+        "supports": "Historical reporting on Black-owned beauty shops as spaces for community organizing and political activism."
       }
     ]
   }
