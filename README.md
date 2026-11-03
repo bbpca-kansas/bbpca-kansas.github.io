@@ -24,6 +24,8 @@ images are stored in `campaign-articles-data.js` and `assets/campaign-gallery/`.
 The site's fonts (DM Sans and Playfair Display) are self-hosted in `assets/fonts/`, so the page
 does not load anything from Google Fonts.
 
+Page views are measured with GoatCounter using the `bbpconsumeradvocates` site.
+
 ## Contact and campaign links
 
 - Email: [bbpconsumeradvocates@gmail.com](mailto:bbpconsumeradvocates@gmail.com)
