@@ -1943,5 +1943,25 @@ window.articleSources = [
         "supports": "Historical reporting on Black-owned beauty shops as spaces for community organizing and political activism."
       }
     ]
+  },
+  {
+    "post": "59",
+    "sources": [
+      {
+        "name": "SC African American History Calendar, Bernice Robinson",
+        "url": "https://scafricanamerican.com/honorees/bernice-robinson/",
+        "supports": "Biography of Bernice Robinson, the Charleston beautician who became the first teacher of the Citizenship Education Program."
+      },
+      {
+        "name": "Highlander Research and Education Center Digital Collection",
+        "url": "https://teva.contentdm.oclc.org/digital/collection/highlander/id/1898/",
+        "supports": "Highlander Folk School archival record related to its training of civil rights leaders, including cosmetologists."
+      },
+      {
+        "name": "Study South Carolina, Bernice Robinson",
+        "url": "https://studysc.org/sc-people/bernice-robinson",
+        "supports": "Profile of Bernice Robinson and her role in Citizenship Education Program literacy and voter registration classes."
+      }
+    ]
   }
 ];
