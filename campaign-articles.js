@@ -60,6 +60,33 @@
 
   const indexList = document.querySelector("#article-index-list");
   const sortSelect = document.querySelector("#article-sort");
+  const searchInput = document.querySelector("#article-search");
+  const topicSelect = document.querySelector("#article-topic");
+  const statusLine = document.querySelector("#article-index-status");
+
+  const topics = {
+    sb30: /SB ?30\b/i,
+    history: /history|civil rights|Highlander|Tiffany/i,
+    deregulation: /deregulat|sugaring|SB ?434/i,
+    funding: /Koch|Policy Institute|Americans for Prosperity|lobby|Justice Institute|Opportunity Solutions/i,
+    board: /Board of Cosmetology/i,
+    safety: /safety|infection|injur|sanitation/i,
+  };
+  const searchText = new Map(window.campaignArticles.map((article) => [
+    article.post,
+    `${article.title} ${article.paragraphs.join(" ")}`.toLowerCase(),
+  ]));
+  const matches = (article) => {
+    const query = searchInput instanceof HTMLInputElement ? searchInput.value.trim().toLowerCase() : "";
+    const topic = topicSelect instanceof HTMLSelectElement ? topics[topicSelect.value] : null;
+    const text = searchText.get(article.post);
+    return (!query || query.split(/\s+/).every((word) => text.includes(word))) && (!topic || topic.test(text));
+  };
+  const isFiltering = () =>
+    (searchInput instanceof HTMLInputElement && searchInput.value.trim() !== "") ||
+    (topicSelect instanceof HTMLSelectElement && topicSelect.value !== "");
+  let renderIndex = () => {};
+
   if (indexList instanceof HTMLElement && sortSelect instanceof HTMLSelectElement) {
     const original = window.campaignArticles.map((article, position) => ({ article, position }));
     const sorters = {
@@ -69,8 +96,13 @@
       za: (a, b) => b.article.title.localeCompare(a.article.title, undefined, { sensitivity: "base" }),
     };
 
-    const renderIndex = () => {
-      const items = original.slice().sort(sorters[sortSelect.value] || sorters.views);
+    renderIndex = () => {
+      const items = original.filter(({ article }) => matches(article)).sort(sorters[sortSelect.value] || sorters.views);
+      if (statusLine instanceof HTMLElement) {
+        statusLine.textContent = isFiltering()
+          ? `${items.length} of ${original.length} articles match.`
+          : "";
+      }
       indexList.replaceChildren(...items.map(({ article }) => {
         const item = document.createElement("li");
         const link = document.createElement("a");
@@ -98,26 +130,37 @@
   gallery.replaceChildren(...cards);
   gallery.className = "article-grid";
 
+  const articleByPost = new Map(window.campaignArticles.map((article) => [article.post, article]));
+  let more = null;
+  let status = null;
+  let button = null;
+
+  const update = () => {
+    if (isFiltering()) {
+      cards.forEach((card) => { card.hidden = !matches(articleByPost.get(card.dataset.post)); });
+      if (more) more.hidden = true;
+      return;
+    }
+    cards.forEach((card, i) => { card.hidden = i >= shown; });
+    if (!more) return;
+    const remaining = cards.length - shown;
+    status.textContent = `Showing ${Math.min(shown, cards.length)} of ${cards.length} articles`;
+    button.textContent = `Show ${Math.max(0, Math.min(PAGE_SIZE, remaining))} more`;
+    more.hidden = false;
+    button.hidden = remaining <= 0;
+  };
+  updatePaging = update;
+
   if (cards.length > PAGE_SIZE) {
-    const more = document.createElement("div");
+    more = document.createElement("div");
     more.className = "article-more";
 
-    const status = document.createElement("p");
+    status = document.createElement("p");
     status.setAttribute("role", "status");
-    const button = document.createElement("button");
+    button = document.createElement("button");
     button.type = "button";
     button.className = "button button-dark";
 
-    const update = () => {
-      cards.forEach((card, i) => { card.hidden = i >= shown; });
-      const remaining = cards.length - shown;
-      status.textContent = `Showing ${Math.min(shown, cards.length)} of ${cards.length} articles`;
-      button.textContent = `Show ${Math.max(0, Math.min(PAGE_SIZE, remaining))} more`;
-      more.hidden = false;
-      button.hidden = remaining <= 0;
-    };
-
-    updatePaging = update;
     button.addEventListener("click", () => {
       shown += PAGE_SIZE;
       update();
@@ -125,6 +168,13 @@
 
     more.append(status, button);
     gallery.after(more);
-    update();
   }
+  update();
+
+  const onFilterChange = () => {
+    renderIndex();
+    update();
+  };
+  if (searchInput instanceof HTMLInputElement) searchInput.addEventListener("input", onFilterChange);
+  if (topicSelect instanceof HTMLSelectElement) topicSelect.addEventListener("change", onFilterChange);
 })();

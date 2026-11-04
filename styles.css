@@ -1269,6 +1269,24 @@ h2 em {
   font-weight: 500;
 }
 
+.article-index-controls input[type="search"] {
+  min-width: 12rem;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid rgba(23, 26, 30, 0.3);
+  border-radius: 4px;
+  font: inherit;
+}
+
+.article-index-status {
+  margin: 0.75rem 0 0;
+  color: var(--muted-ink);
+  font-size: 0.85rem;
+}
+
+.article-index-status:empty {
+  display: none;
+}
+
 .article-index-list {
   columns: 2 20rem;
   column-gap: 2rem;

@@ -203,6 +203,18 @@
         <div class="article-index" id="article-index">
           <div class="article-index-controls">
             <h3 id="article-index-title">Article index</h3>
+            <label for="article-search">Search</label>
+            <input type="search" id="article-search" placeholder="Search articles" autocomplete="off">
+            <label for="article-topic">Topic</label>
+            <select id="article-topic">
+              <option value="">All topics</option>
+              <option value="sb30">SB 30</option>
+              <option value="history">History</option>
+              <option value="deregulation">Deregulation</option>
+              <option value="funding">Funding and lobbying</option>
+              <option value="board">Board of Cosmetology</option>
+              <option value="safety">Safety</option>
+            </select>
             <label for="article-sort">Sort by</label>
             <select id="article-sort">
               <option value="views">Most viewed</option>
@@ -212,6 +224,7 @@
             </select>
           </div>
           <ol class="article-index-list" id="article-index-list" aria-labelledby="article-index-title"></ol>
+          <p class="article-index-status" id="article-index-status" role="status"></p>
         </div>
         <div class="gallery-grid" id="campaign-article-grid"></div>
       </section>
