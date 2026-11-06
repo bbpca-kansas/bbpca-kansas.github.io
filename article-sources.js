@@ -11,7 +11,7 @@
       const summary = document.createElement("summary");
       const label = document.createElement("span");
       label.textContent = `Article ${post}`;
-      summary.append(label, titles.get(post) || "");
+      summary.append(label, titles.has(post) ? ` ${titles.get(post)}` : "");
       details.append(summary);
 
       const ul = document.createElement("ul");

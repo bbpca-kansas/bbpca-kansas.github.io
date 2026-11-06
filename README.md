@@ -16,10 +16,16 @@ available at:
 Open `index.html` in a web browser. The site uses static HTML, CSS, and JavaScript; no package
 installation or build step is required.
 
-The **From the campaign** section lists 58 reviewed BBPCA articles, ordered by Facebook views
+The **From the campaign** section lists 59 reviewed BBPCA articles, ordered by Facebook views
 (most viewed first). It opens with an **article index** that can be sorted (most viewed, article number, title A–Z or
 Z–A) and links to each article. Nine articles show at first and a **Show more** button loads the
 rest. Articles carry no dates or images. Article text is stored in `campaign-articles-data.js`.
+
+The homepage shows selected news and resources. The complete searchable resource catalog and
+article-by-article citations are on `resources.html`; the publisher filter applies to resource
+cards, topic filtering narrows resource cards, and article filtering narrows article-source entries.
+Search covers resource cards and article-source entries. The SB 30 fact sheet is available at
+`fact-sheet.html` with links to primary sources.
 
 Article images are kept out of the website in `archive/article-images/`, with the article-to-image
 mapping in `archive/article-images.json`. The deploy workflow excludes `archive/`.

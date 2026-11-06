@@ -782,6 +782,7 @@ h2 em {
   margin: 2rem auto 2.5rem;
 }
 
+.resources-heading h1,
 .resources-heading h2 {
   max-width: 590px;
   margin: 0;
@@ -796,6 +797,68 @@ h2 em {
   color: var(--muted-ink);
   font-size: 0.85rem;
   line-height: 1.8;
+}
+
+.resource-library-link {
+  max-width: 1120px;
+  margin: 1.5rem auto 0;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(23, 26, 30, 0.18);
+  color: var(--muted-ink);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.resource-library-link a {
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: var(--coral);
+  text-underline-offset: 0.2em;
+}
+
+.resource-library-controls {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem 1rem;
+  max-width: 1120px;
+  margin: 0 auto 1.5rem;
+}
+
+.resource-library-controls label {
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.resource-library-controls input,
+.resource-library-controls select {
+  width: 100%;
+  min-height: 2.8rem;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid rgba(23, 26, 30, 0.35);
+  border-radius: 4px;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+}
+
+.resource-library-controls input:focus-visible,
+.resource-library-controls select:focus-visible {
+  outline: 3px solid var(--coral);
+  outline-offset: 2px;
+}
+
+.resource-library-status {
+  max-width: 1120px;
+  min-height: 1.5em;
+  margin: 0 auto 1rem;
+  color: var(--muted-ink);
+  font-size: 0.9rem;
+}
+
+.resource-card[hidden],
+.article-sources-list details[hidden] {
+  display: none;
 }
 
 .resource-grid {
@@ -1201,12 +1264,17 @@ h2 em {
     margin: 1.8rem 0;
   }
 
+  .resources-heading h1,
   .resources-heading h2 {
     margin-bottom: 1rem;
     font-size: clamp(2.5rem, 10vw, 3.5rem);
   }
 
   .resource-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .resource-library-controls {
     grid-template-columns: 1fr;
   }
 
