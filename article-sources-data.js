@@ -1,5 +1,35 @@
 window.articleSources = [
   {
+    "post": "61",
+    "sources": [
+      {
+        "name": "Royal College of Surgeons of England: History of the RCS",
+        "url": "https://www.rcseng.ac.uk/about-the-rcs/history-of-the-rcs/",
+        "supports": "The formation of the Barber-Surgeons Company in 1540 and the 1745 Act of Parliament separating barbers and surgeons."
+      },
+      {
+        "name": "Barber Schools: History of the Barber",
+        "url": "https://www.barber-schools.org/barber-information/history-of-the-barber",
+        "supports": "The commonly cited 1893 opening of the first barber college in Chicago and the development of formal barber education."
+      },
+      {
+        "name": "The Licensing of Barbers in the USA",
+        "url": "https://ideas.repec.org/a/bla/brjirl/v48y2010i4p740-757.html",
+        "supports": "Research on the origins, development and effects of barber licensing in the United States."
+      },
+      {
+        "name": "National Museum of African American History and Culture: The Community Roles of the Barber Shop and Beauty Salon",
+        "url": "https://nmaahc.si.edu/explore/stories/community-roles-barber-shop-and-beauty-salon",
+        "supports": "Barber shops and beauty salons as African American community gathering places and cultural institutions."
+      },
+      {
+        "name": "Quincy T. Mills: Cutting Along the Color Line",
+        "url": "https://www.jstor.org/stable/j.ctt4cghgr",
+        "supports": "The history of Black barbers and barber shops, including entrepreneurship, community life and civil rights politics."
+      }
+    ]
+  },
+  {
     "post": "60",
     "sources": [
       {

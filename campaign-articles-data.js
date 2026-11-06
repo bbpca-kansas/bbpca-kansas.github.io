@@ -1,5 +1,37 @@
 window.campaignArticles = [
   {
+    "post": "61",
+    "title": "The History of Barbering: Part 2",
+    "postedAt": "2026-11-05T19:36",
+    "postedLabel": "Posted Thursday, November 5, 2026 at 7:36 p.m.",
+    "headings": [3, 7, 12, 18],
+    "paragraphs": [
+      "From a trade to a profession.",
+      "Part one explored the ancient origins of barbering, the era of barber-surgeons, and the history behind the familiar red and white barber pole.",
+      "But how did barbering evolve from a trade that once included medical procedures into the skilled profession we recognize today?",
+      "1745: BARBERS AND SURGEONS GO THEIR SEPARATE WAYS",
+      "In England, barbers and surgeons had been formally united in a professional company since 1540.",
+      "As surgery developed into a distinct profession, the relationship between the two groups eventually became strained.",
+      "In 1745, Parliament formally separated the groups. Barbers increasingly focused on grooming, shaving, hair cutting, and wig-making, while surgeons continued developing their medical profession.",
+      "THE RISE OF PROFESSIONAL BARBER EDUCATION",
+      "By the late 19th century, formal barber education was becoming increasingly important.",
+      "In 1893, Chicago is commonly credited with the opening of the first barber college.",
+      "Barber education helped establish a foundation for professional training, technical skill, sanitation, and modern barbering standards.",
+      "The trade was becoming more than an inherited skill. It was developing into a recognized profession requiring education and specialized knowledge.",
+      "THE BARBER SHOP: AN AMERICAN COMMUNITY INSTITUTION",
+      "By the late 19th and early 20th centuries, barber shops had become fixtures in American neighborhoods.",
+      "They were places where people gathered, conversations happened, relationships developed, and community news traveled.",
+      "Black-owned barber shops held particular significance in African American communities. During segregation, they provided spaces for economic independence, entrepreneurship, cultural identity, and community leadership.",
+      "These businesses became important gathering places where people could exchange ideas, organize, build relationships, and participate in social and political movements, including the Civil Rights Movement.",
+      "For generations, the barber shop has been much more than a place to get a haircut. It has been a place where communities connect.",
+      "BARBERING TODAY: AN ENDURING PROFESSION",
+      "Today’s barbering industry combines traditional techniques, including straight-razor shaving, with modern hair design, specialized styling, and evolving professional practices.",
+      "Despite centuries of technological and cultural change, one thing remains remarkably consistent: the relationship between a barber and the community they serve.",
+      "Barbering is one of the oldest and most enduring personal service professions in history.",
+      "Its story is a reminder that these professionals are not simply providing a haircut. They are carrying forward a trade, a tradition, and an important part of our community history."
+    ]
+  },
+  {
     "post": "60",
     "title": "The History of Barbering: Part 1",
     "postedAt": "2026-11-04T22:12",

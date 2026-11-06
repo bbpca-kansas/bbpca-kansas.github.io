@@ -16,11 +16,11 @@ available at:
 Open `index.html` in a web browser. The site uses static HTML, CSS, and JavaScript; no package
 installation or build step is required.
 
-The **From the campaign** section lists 60 BBPCA articles. The newest article appears first,
+The **From the campaign** section lists 61 BBPCA articles. The two newest articles appear first,
 followed by the earlier reviewed articles ordered by Facebook views (most viewed first).
-It opens with an **article index** that can be sorted (new article then most viewed, article number, title A–Z or
+It opens with an **article index** that can be sorted (new articles then most viewed, article number, title A–Z or
 Z–A) and links to each article. Nine articles show at first and a **Show more** button loads the
-rest. The new article shows its supplied posting date; articles do not display images. Article text is stored in `campaign-articles-data.js`.
+rest. The two new articles show their supplied posting dates; articles do not display images. Article text is stored in `campaign-articles-data.js`.
 Article cards cycle through 20 color themes; long plain-text blocks are displayed in shorter
 paragraphs when sentence segmentation is available. Existing specially formatted articles retain
 their markup. Articles with source lists link directly to their sources and back.

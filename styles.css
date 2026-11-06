@@ -658,6 +658,17 @@ h2 em {
   margin-bottom: 0;
 }
 
+.article-section-heading {
+  margin: 1.5rem 0 0.75rem;
+  padding: 0.65rem 0.8rem;
+  border-radius: 5px;
+  background: hsl(var(--article-hue), 65%, 85%);
+  color: hsl(var(--article-hue), 65%, 20%);
+  font-family: var(--sans);
+  font-size: 1rem;
+  line-height: 1.35;
+}
+
 .article-copy .article-lede {
   padding: 0.9rem 1rem;
   border-left: 4px solid hsl(var(--article-hue), 65%, 32%);

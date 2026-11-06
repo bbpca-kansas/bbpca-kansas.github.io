@@ -72,7 +72,14 @@
         body.classList.add("article-rich");
         body.innerHTML = article.html;
       } else {
-        for (const paragraph of article.paragraphs) {
+        for (const [index, paragraph] of article.paragraphs.entries()) {
+          if (article.headings?.includes(index)) {
+            const heading = document.createElement("h4");
+            heading.className = "article-section-heading";
+            heading.textContent = paragraph;
+            body.append(heading);
+            continue;
+          }
           for (const part of readableParagraphs(paragraph)) {
             const text = document.createElement("p");
             text.textContent = part;
