@@ -1,5 +1,35 @@
 window.articleSources = [
   {
+    "post": "60",
+    "sources": [
+      {
+        "name": "Oxford County Archives: Barbershop History",
+        "url": "https://archives.oxfordcounty.ca/exhibits/history-of-facial-hair-a-county-warden-gallery-movember-exhibit/barbershop-history/",
+        "supports": "The history of Greek barber shops, their role as gathering places, and how barbering evolved over time."
+      },
+      {
+        "name": "Wellcome Collection: Bloodletting at the Barber-Surgeon's",
+        "url": "https://wellcomecollection.org/stories/bloodletting-at-the-barber-surgeon-s",
+        "supports": "Why barbers performed medical procedures, including bloodletting, and how the profession became associated with surgery."
+      },
+      {
+        "name": "Colonial Williamsburg: Barber Pole",
+        "url": "https://emuseum.colonialwilliamsburg.org/objects/58574/barber-pole",
+        "supports": "A historical barber pole and its connection to barber-surgeons, bloodletting and bandages."
+      },
+      {
+        "name": "HISTORY: A Brief History of Bloodletting",
+        "url": "https://www.history.com/articles/a-brief-history-of-bloodletting",
+        "supports": "Historical background on bloodletting from ancient civilizations through medieval Europe."
+      },
+      {
+        "name": "JAMA: Blood Letting: Barber-Surgeons' Shaving and Bleeding Bowls",
+        "url": "https://jamanetwork.com/journals/jama/article-abstract/357568",
+        "supports": "Medical history of barber-surgeons and their shaving and bleeding bowls."
+      }
+    ]
+  },
+  {
     "post": "1",
     "sources": [
       {

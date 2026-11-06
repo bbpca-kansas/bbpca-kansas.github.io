@@ -1,5 +1,25 @@
 window.campaignArticles = [
   {
+    "post": "60",
+    "title": "The History of Barbering: Part 1",
+    "postedAt": "2026-11-04T22:12",
+    "postedLabel": "Posted Wednesday, November 4, 2026 at 10:12 p.m.",
+    "paragraphs": [
+      "From Ancient Rituals to the Barber Pole.",
+      "The profession of barbering has roots stretching back thousands of years. Long before modern barber shops existed, grooming held cultural, spiritual, and social significance in ancient civilizations.",
+      "In ancient cultures, hair and grooming were often associated with status, identity, and spiritual beliefs. Early grooming tools included sharpened stones, shells, and primitive blades.",
+      "In ancient Greece and Rome, barber shops became important gathering places. People came not only for haircuts and shaves but also to exchange news, discuss politics, and catch up on the latest gossip.",
+      "The barber shop was already becoming a community meeting place.",
+      "For centuries, barbers did considerably more than cut hair.",
+      "During the Middle Ages, barbers often performed minor medical procedures because they possessed sharp instruments and practical skills. Procedures included bloodletting, tooth extractions, cupping, lancing abscesses and treating wounds.",
+      "These practitioners became known as barber-surgeons, occupying a unique position between personal grooming and early medical care.",
+      "The familiar red, white and sometimes blue colors of the barber pole are traditionally associated with the barber-surgeon’s medical past. Red represents blood, while white represents bandages.",
+      "Some also connect the spiral design to bloodied bandages wrapped around a pole and displayed outside the shop.",
+      "And that is only the beginning of the story!",
+      "Tomorrow: How barbering separated from medicine, developed into a formally educated profession, and became one of America’s most important neighborhood institutions."
+    ]
+  },
+  {
     "post": "1",
     "title": "Koch Funded Brain Rot – Rep. Barb Wasinger - Hays, KS",
     "paragraphs": [

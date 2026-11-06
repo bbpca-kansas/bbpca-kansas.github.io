@@ -47,6 +47,14 @@
     meta.textContent = `Article ${article.post}`;
     content.append(meta);
 
+    if (article.postedAt && article.postedLabel) {
+      const date = document.createElement("time");
+      date.className = "article-posted";
+      date.dateTime = article.postedAt;
+      date.textContent = article.postedLabel;
+      content.append(date);
+    }
+
     const title = document.createElement("h3");
     title.textContent = article.title;
     content.append(title);

@@ -592,6 +592,13 @@ h2 em {
   text-transform: uppercase;
 }
 
+.article-posted {
+  display: block;
+  margin: 0 0 0.75rem;
+  color: var(--muted-ink);
+  font-size: 0.85rem;
+}
+
 .article-card h3 {
   margin: 0 0 0.9rem;
   font-family: var(--serif);
