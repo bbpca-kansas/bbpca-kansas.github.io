@@ -20,7 +20,9 @@ The **From the campaign** section lists 61 BBPCA articles. The two newest articl
 followed by the earlier reviewed articles ordered by Facebook views (most viewed first).
 It opens with an **article index** that can be sorted (new articles then most viewed, article number, title A–Z or
 Z–A) and links to each article. Nine articles show at first and a **Show more** button loads the
-rest. The two new articles show their supplied posting dates; articles do not display images. Article text is stored in `campaign-articles-data.js`.
+rest. Articles with matched publication records show their posting dates and times; article 30
+has no confirmed match and remains undated. Articles do not display images. Article text is stored
+in `campaign-articles-data.js`.
 Article cards cycle through 20 color themes; long plain-text blocks are displayed in shorter
 paragraphs when sentence segmentation is available. Existing specially formatted articles retain
 their markup. Articles with source lists link directly to their sources and back.
