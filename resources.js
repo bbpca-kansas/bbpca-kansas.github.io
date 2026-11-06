@@ -84,4 +84,18 @@
   publisherSelect.addEventListener("change", update);
   articleSelect.addEventListener("change", update);
   update();
+
+  const openLinkedSources = () => {
+    const match = location.hash.match(/^#sources-article-(\d+)$/);
+    if (!match) return;
+    const group = sourceGroups.find((item) => item.id === `sources-article-${match[1]}`);
+    if (!group) return;
+    search.value = "";
+    articleSelect.value = "";
+    update();
+    group.open = true;
+    group.scrollIntoView({ block: "start" });
+  };
+  window.addEventListener("hashchange", openLinkedSources);
+  openLinkedSources();
 })();

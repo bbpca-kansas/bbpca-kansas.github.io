@@ -5,6 +5,30 @@
   }
 
   const fragment = document.createDocumentFragment();
+  if (!Array.isArray(window.articleSources)) {
+    console.error("Article source data is missing; article source links are unavailable.");
+  }
+  const sourcedPosts = new Set(Array.isArray(window.articleSources) ? window.articleSources.map(({ post }) => post) : []);
+  const hues = [0, 18, 30, 42, 52, 65, 80, 100, 120, 145, 165, 185, 200, 215, 230, 250, 270, 290, 315, 340];
+  const sentenceSegmenter = typeof Intl.Segmenter === "function"
+    ? new Intl.Segmenter("en", { granularity: "sentence" })
+    : null;
+
+  const readableParagraphs = (paragraph) => {
+    if (paragraph.length <= 700 || !sentenceSegmenter) return [paragraph];
+    const sentences = Array.from(sentenceSegmenter.segment(paragraph), (part) => part.segment);
+    const groups = [sentences[0]];
+    let group = "";
+    for (const sentence of sentences.slice(1)) {
+      if (group && group.length + sentence.length > 350) {
+        groups.push(group);
+        group = "";
+      }
+      group += sentence;
+    }
+    if (group) groups.push(group);
+    return groups;
+  };
 
   for (const article of window.campaignArticles) {
     const card = document.createElement("article");
@@ -12,6 +36,8 @@
 
     card.classList.add("article-card--text");
     card.id = `article-${article.post}`;
+    card.style.setProperty("--article-hue", hues[(Number(article.post) - 1) % hues.length]);
+    if (Number(article.post) % 2 === 0) card.classList.add("article-card--sans-title");
 
     const content = document.createElement("div");
     content.className = "article-card-content";
@@ -39,13 +65,24 @@
         body.innerHTML = article.html;
       } else {
         for (const paragraph of article.paragraphs) {
-          const text = document.createElement("p");
-          text.textContent = paragraph;
-          body.append(text);
+          for (const part of readableParagraphs(paragraph)) {
+            const text = document.createElement("p");
+            text.textContent = part;
+            if (!body.hasChildNodes() && part.trim().length <= 260) text.classList.add("article-lede");
+            body.append(text);
+          }
         }
       }
       details.append(body);
       content.append(details);
+    }
+    if (sourcedPosts.has(article.post)) {
+      const sourceLink = document.createElement("a");
+      sourceLink.className = "article-source-link";
+      sourceLink.href = `resources.html#sources-article-${article.post}`;
+      sourceLink.textContent = "View sources";
+      sourceLink.setAttribute("aria-label", `View sources for article ${article.post}: ${article.title}`);
+      content.append(sourceLink);
     }
     card.append(content);
     card.dataset.post = article.post;
@@ -177,4 +214,21 @@
   };
   if (searchInput instanceof HTMLInputElement) searchInput.addEventListener("input", onFilterChange);
   if (topicSelect instanceof HTMLSelectElement) topicSelect.addEventListener("change", onFilterChange);
+
+  const openLinkedArticle = () => {
+    const match = location.hash.match(/^#article-(\d+)$/);
+    if (!match) return;
+    const card = cards.find((item) => item.dataset.post === match[1]);
+    if (!card) return;
+    if (searchInput instanceof HTMLInputElement) searchInput.value = "";
+    if (topicSelect instanceof HTMLSelectElement) topicSelect.value = "";
+    shown = Math.max(shown, cards.indexOf(card) + 1);
+    renderIndex();
+    update();
+    const details = card.querySelector("details");
+    if (details) details.open = true;
+    card.scrollIntoView({ block: "start" });
+  };
+  window.addEventListener("hashchange", openLinkedArticle);
+  openLinkedArticle();
 })();

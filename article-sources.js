@@ -8,6 +8,7 @@
     .sort((a, b) => Number(a.post) - Number(b.post))
     .map(({ post, sources }) => {
       const details = document.createElement("details");
+      details.id = `sources-article-${post}`;
       const summary = document.createElement("summary");
       const label = document.createElement("span");
       label.textContent = `Article ${post}`;
@@ -32,17 +33,12 @@
       }
       details.append(ul);
 
-      if (document.getElementById(`article-${post}`)) {
+      if (titles.has(post)) {
         const jump = document.createElement("a");
         jump.className = "read-article";
-        jump.href = `#article-${post}`;
-        jump.textContent = "Go to this article ↓";
-        jump.addEventListener("click", () => {
-          const card = document.getElementById(`article-${post}`);
-          card.hidden = false;
-          const body = card.querySelector("details");
-          if (body) body.open = true;
-        });
+        jump.href = `index.html#article-${post}`;
+        jump.textContent = "Read this article";
+        jump.setAttribute("aria-label", `Read article ${post}: ${titles.get(post)}`);
         details.append(jump);
       }
       return details;
