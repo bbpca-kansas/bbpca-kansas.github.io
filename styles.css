@@ -1009,6 +1009,29 @@ h2 em {
   text-underline-offset: 0.22em;
 }
 
+.contact-note {
+  max-width: 650px;
+  margin-top: 2rem;
+  color: rgba(247, 244, 236, 0.84);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.contact-note h3 {
+  margin: 0 0 0.5rem;
+  color: var(--paper);
+  font-size: 1rem;
+}
+
+.contact-note p {
+  margin: 0.5rem 0 0;
+}
+
+.contact-note a {
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+}
+
 .site-footer {
   display: flex;
   align-items: center;
