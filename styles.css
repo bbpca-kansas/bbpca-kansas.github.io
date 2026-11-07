@@ -773,8 +773,8 @@ h2 em {
 }
 
 .article-card--text {
-  border-left: 5px solid hsl(var(--article-hue), 65%, 32%);
-  background: hsl(var(--article-hue), 55%, 95%);
+  border-left: 4px solid var(--coral);
+  background: var(--paper);
 }
 
 .article-card--text .article-card-content {
@@ -786,9 +786,9 @@ h2 em {
   width: fit-content;
   margin: 0 0 0.75rem;
   padding: 0.25rem 0.6rem;
-  border: 1px solid hsl(var(--article-hue), 45%, 60%);
+  border: 1px solid var(--gold);
   border-radius: 99px;
-  color: hsl(var(--article-hue), 65%, 24%);
+  color: var(--ink);
   font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -798,8 +798,8 @@ h2 em {
   margin: 0 0 1rem;
   padding: 0.8rem 1rem;
   border-radius: 5px;
-  background: hsl(var(--article-hue), 65%, 85%);
-  color: hsl(var(--article-hue), 65%, 20%);
+  background: var(--paper-deep);
+  color: var(--ink);
   font-size: 1.45rem;
   font-weight: 700;
 }
@@ -861,9 +861,10 @@ h2 em {
 .article-section-heading {
   margin: 1.5rem 0 0.75rem;
   padding: 0.65rem 0.8rem;
+  border-left: 3px solid var(--coral);
   border-radius: 5px;
-  background: hsl(var(--article-hue), 65%, 85%);
-  color: hsl(var(--article-hue), 65%, 20%);
+  background: var(--paper-deep);
+  color: var(--ink);
   font-family: var(--sans);
   font-size: 1rem;
   line-height: 1.35;
@@ -871,9 +872,9 @@ h2 em {
 
 .article-copy .article-lede {
   padding: 0.9rem 1rem;
-  border-left: 4px solid hsl(var(--article-hue), 65%, 32%);
+  border-left: 4px solid var(--gold);
   border-radius: 0 5px 5px 0;
-  background: hsl(var(--article-hue), 60%, 90%);
+  background: var(--paper-deep);
   color: var(--ink);
   font-weight: 600;
 }
@@ -881,26 +882,25 @@ h2 em {
 .article-source-link {
   display: inline-block;
   margin-top: 1rem;
-  color: hsl(var(--article-hue), 65%, 25%);
+  color: var(--coral);
   font-size: 0.9rem;
   font-weight: 500;
   text-decoration: underline;
   text-underline-offset: 0.2em;
 }
 
-/* Articles that keep their original Word formatting (colors from the supplied .docx) */
 .article-rich {
   margin-top: 0.8rem;
   padding: 1.2rem;
   border-radius: 5px;
-  background: #dbe5f1;
-  color: #20124d;
+  background: var(--paper);
+  color: var(--ink);
   font-family: "DM Sans", "Segoe UI", sans-serif;
 }
 
 .article-rich p,
 .article-rich li {
-  color: #20124d;
+  color: var(--ink);
   font-size: 1rem;
   line-height: 1.7;
 }
@@ -920,72 +920,43 @@ h2 em {
 }
 
 .article-rich .rich-muted {
-  color: #403152;
+  color: var(--muted-ink);
 }
 
 .rich-banner {
   margin: 0 0 1rem;
   padding: 0.6rem 0.8rem;
+  border-radius: 4px;
+  background: var(--green);
+  color: var(--paper);
   font-family: "DM Sans", "Segoe UI", sans-serif;
   font-size: clamp(1.7rem, 4vw, 2.3rem);
   font-weight: 700;
   line-height: 1.15;
   text-align: center;
-  paint-order: stroke fill;
 }
 
 .article-rich > .rich-banner:not(:first-child) {
   margin-top: 1.6rem;
 }
 
-.rich-banner--blue {
-  background: #4f81bd;
-  color: #e5b8b7;
-  -webkit-text-stroke: 1px #c0504d;
-}
-
-.rich-banner--pink {
-  color: #e5b8b7;
-  -webkit-text-stroke: 1px #c0504d;
-}
-
-.rich-banner--violet {
-  color: #8064a2;
-  -webkit-text-stroke: 1px #8064a2;
-}
-
 .article-rich .rich-callout {
   margin: 1.4rem auto;
   padding: 0.9rem;
+  border-left: 4px solid var(--coral);
   border-radius: 14px;
   max-width: 92%;
+  background: var(--paper-deep);
 }
 
 .article-rich .rich-callout p {
   margin: 0;
   padding: 1rem;
+  color: var(--ink);
   font-size: 1.25rem;
   font-weight: 700;
   line-height: 1.45;
   text-align: center;
-}
-
-.rich-callout--purple {
-  background: #8e7cc3;
-}
-
-.rich-callout--purple p {
-  background: linear-gradient(#dbd4eb, #9080bb);
-  color: #351c75;
-}
-
-.rich-callout--rose {
-  background: #c27ba0;
-}
-
-.rich-callout--rose p {
-  background: #ead1dc;
-  color: #741b47;
 }
 
 .gallery-card {

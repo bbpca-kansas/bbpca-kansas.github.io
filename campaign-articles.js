@@ -30,7 +30,6 @@
     article.post,
     `${article.title} ${article.paragraphs.join(" ")}`.toLowerCase(),
   ]));
-  const hues = [0, 18, 30, 42, 52, 65, 80, 100, 120, 145, 165, 185, 200, 215, 230, 250, 270, 290, 315, 340];
   const sentenceSegmenter = typeof Intl.Segmenter === "function"
     ? new Intl.Segmenter("en", { granularity: "sentence" })
     : null;
@@ -57,7 +56,6 @@
 
     card.classList.add("article-card--text");
     card.id = `article-${article.post}`;
-    card.style.setProperty("--article-hue", hues[(Number(article.post) - 1) % hues.length]);
     if (Number(article.post) % 2 === 0) card.classList.add("article-card--sans-title");
 
     const content = document.createElement("div");
