@@ -16,7 +16,7 @@ available at:
 Open `index.html` in a web browser. The site uses static HTML, CSS, and JavaScript; no package
 installation or build step is required.
 
-The **From the campaign** section lists 61 BBPCA articles. The two newest articles appear first,
+The **From the campaign** section lists 62 BBPCA articles. The three newest articles appear first,
 followed by the earlier reviewed articles ordered by Facebook views (most viewed first).
 It opens with an **article index** that can be sorted (new articles then most viewed, article number, title A–Z or
 Z–A) and links to each article. Nine articles show at first and a **Show more** button loads the

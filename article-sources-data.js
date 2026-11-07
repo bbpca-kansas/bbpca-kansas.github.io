@@ -1,5 +1,70 @@
 window.articleSources = [
   {
+    "post": "62",
+    "sources": [
+      {
+        "name": "Americans for Prosperity: Beauty Not Barriers",
+        "url": "https://americansforprosperity.org/commentary/afp-confronts-outdated-cosmetology-regulations-that-stifle-residents-of-the-sunflower-state/",
+        "supports": "AFP's stated position on Kansas cosmetology licensing, its Beauty Not Barriers campaign, and its collaboration with KJI and KPI."
+      },
+      {
+        "name": "The Sentinel: Lawmakers approve SB 434, exempting sugaring from cosmetology license requirement",
+        "url": "https://sentinelksmo.org/lawmakers-approve-sb-434-exempting-sugaring-from-cosmetology-license-requirement/",
+        "supports": "Reporting on SB 434, the Kansas debate over sugaring licensure, and statements from AFP-KS and Kansas Justice Institute."
+      },
+      {
+        "name": "Kansas Justice Institute: Sugaring case",
+        "url": "https://kansasjusticeinstitute.org/case/sugaring/",
+        "supports": "KJI's arguments challenging the licensing requirements applied to sugaring and its account of the training requirements at issue."
+      },
+      {
+        "name": "Kansas Statutes, K.S.A. 65-1912: Apprentice license and required practice",
+        "url": "https://kslegislature.gov/b2025_26/laws/065_000_0000_chapter/065_019_0000_article/065_019_0012_section/065_019_0012_k/",
+        "supports": "The statutory 1,500-hour cosmetologist school pathway and statutory training requirements for other listed professions. Read the statute for profession-specific requirements."
+      },
+      {
+        "name": "Kansas Statutes, K.S.A. 65-1904b: Licensure by reciprocity",
+        "url": "https://kslegislature.gov/li/b2025_26/statute/065_000_0000_chapter/065_019_0000_article/065_019_0004b_section/065_019_0004b_k/",
+        "supports": "Kansas's statutory requirements for licensure by reciprocity for cosmetologists, estheticians, and electrologists."
+      },
+      {
+        "name": "Kansas Legislature: Senate Federal and State Affairs Committee Minutes, February 3, 2026",
+        "url": "https://www.kslegislature.gov/b2025_26/bills/download/?apn=b2025_26/year2/senate/committees/ctte_s_fed_st_1/minutes/published/ctte_s_fed_st_1_20260203_min.pdf",
+        "supports": "The committee's consideration of the request to introduce RS 3343 concerning consolidation of the barbering and cosmetology boards."
+      },
+      {
+        "name": "Senate Federal and State Affairs Committee Transcript: RS 3343 Introduction",
+        "url": "https://citizenportal.ai/source/7478220/senate-committee-on-federal-and-state-affairs-02032026#transcript",
+        "supports": "A transcript of the RS 3343 proposal, including its proposed board consolidation and supervised-practice pathway."
+      },
+      {
+        "name": "Kansas Legislature: SB 30",
+        "url": "https://www.kslegislature.gov/b2025_26/bills/sb30/",
+        "supports": "SB 30's legislative text and history concerning occupational licensing reports and legislative ratification."
+      },
+      {
+        "name": "Governor Laura Kelly: SB 30 veto message",
+        "url": "https://www.governor.ks.gov/Home/Components/News/News/996/55",
+        "supports": "The Governor's stated reasons for vetoing SB 30 and concerns about legislative involvement in agency decisions."
+      },
+      {
+        "name": "Kansas Statutes, K.S.A. 74-2701: Kansas Board of Cosmetology",
+        "url": "https://www.kslegislature.gov/li/b2025_26/statute/074_000_0000_chapter/074_027_0000_article/074_027_0001_section/074_027_0001_k/",
+        "supports": "The statutory establishment, duties, and composition of the Kansas Board of Cosmetology."
+      },
+      {
+        "name": "Kansas Statutes, K.S.A. 74-2704: Cosmetology Fee Fund",
+        "url": "https://www.kslegislature.gov/li/b2025_26/statute/074_000_0000_chapter/074_027_0000_article/074_027_0004_section/074_027_0004_k/",
+        "supports": "The statutory Cosmetology Fee Fund and disposition of cosmetology-related fees."
+      },
+      {
+        "name": "Kansas Board of Barbering",
+        "url": "https://www.kansas.gov/kbob/",
+        "supports": "The independent Kansas Board of Barbering and its licensing and regulatory responsibilities."
+      }
+    ]
+  },
+  {
     "post": "61",
     "sources": [
       {
