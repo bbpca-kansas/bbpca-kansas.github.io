@@ -9,6 +9,27 @@
     console.error("Article source data is missing; article source links are unavailable.");
   }
   const sourcedPosts = new Set(Array.isArray(window.articleSources) ? window.articleSources.map(({ post }) => post) : []);
+  const topics = {
+    sb30: /SB ?30\b/i,
+    history: /history|civil rights|Highlander|Tiffany/i,
+    deregulation: /deregulat|sugaring|SB ?434/i,
+    funding: /Koch|Policy Institute|Americans for Prosperity|lobby|Justice Institute|Opportunity Solutions/i,
+    board: /Board of Cosmetology/i,
+    safety: /safety|infection|injur|sanitation/i,
+  };
+  const topicLabels = {
+    sb30: "SB 30",
+    history: "History",
+    deregulation: "Deregulation",
+    funding: "Funding & lobbying",
+    board: "Board of Cosmetology",
+    safety: "Safety",
+    other: "Industry & careers",
+  };
+  const searchText = new Map(window.campaignArticles.map((article) => [
+    article.post,
+    `${article.title} ${article.paragraphs.join(" ")}`.toLowerCase(),
+  ]));
   const hues = [0, 18, 30, 42, 52, 65, 80, 100, 120, 145, 165, 185, 200, 215, 230, 250, 270, 290, 315, 340];
   const sentenceSegmenter = typeof Intl.Segmenter === "function"
     ? new Intl.Segmenter("en", { granularity: "sentence" })
@@ -42,6 +63,13 @@
     const content = document.createElement("div");
     content.className = "article-card-content";
 
+    const topic = Object.entries(topics).find(([, pattern]) => pattern.test(searchText.get(article.post)));
+    const topicKey = topic ? topic[0] : "other";
+    const topicTag = document.createElement("p");
+    topicTag.className = "article-topic-tag";
+    topicTag.textContent = topicLabels[topicKey];
+    content.append(topicTag);
+
     const meta = document.createElement("p");
     meta.className = "article-meta";
     meta.textContent = `Article ${article.post}`;
@@ -58,6 +86,19 @@
     const title = document.createElement("h3");
     title.textContent = article.title;
     content.append(title);
+
+    const preview = article.paragraphs.find((paragraph, index) =>
+      !article.headings?.includes(index) && paragraph.trim() && !paragraph.trim().startsWith("•"),
+    );
+    if (preview) {
+      const excerpt = document.createElement("p");
+      excerpt.className = "article-excerpt";
+      const trimmedPreview = preview.trim();
+      excerpt.textContent = trimmedPreview.length > 200
+        ? `${trimmedPreview.slice(0, 197).replace(/\s+\S*$/, "")}…`
+        : trimmedPreview;
+      content.append(excerpt);
+    }
 
     const details = document.createElement("details");
     if (article.paragraphs.length) {
@@ -89,6 +130,7 @@
         }
       }
       details.append(body);
+      details.addEventListener("toggle", () => card.classList.toggle("article-card--expanded", details.open));
       content.append(details);
     }
     if (sourcedPosts.has(article.post)) {
@@ -116,18 +158,6 @@
   const topicSelect = document.querySelector("#article-topic");
   const statusLine = document.querySelector("#article-index-status");
 
-  const topics = {
-    sb30: /SB ?30\b/i,
-    history: /history|civil rights|Highlander|Tiffany/i,
-    deregulation: /deregulat|sugaring|SB ?434/i,
-    funding: /Koch|Policy Institute|Americans for Prosperity|lobby|Justice Institute|Opportunity Solutions/i,
-    board: /Board of Cosmetology/i,
-    safety: /safety|infection|injur|sanitation/i,
-  };
-  const searchText = new Map(window.campaignArticles.map((article) => [
-    article.post,
-    `${article.title} ${article.paragraphs.join(" ")}`.toLowerCase(),
-  ]));
   const matches = (article) => {
     const query = searchInput instanceof HTMLInputElement ? searchInput.value.trim().toLowerCase() : "";
     const topic = topicSelect instanceof HTMLSelectElement ? topics[topicSelect.value] : null;
