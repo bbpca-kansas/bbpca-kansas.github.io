@@ -22,8 +22,9 @@ It opens with an **articles and infographics index** that can be sorted (newest 
 Z–A) and links to each entry. Its numbers match the article or infographic numbers. Nine entries show at first and a **Show more** button loads the
 rest. Articles with matched publication records show their posting dates and times; article 30
 has no confirmed match and remains undated. Cards with images can be opened or closed by clicking the card
-or using the control with a keyboard. On phones, the preview image appears above the text; on wider screens,
-the expanded text wraps around the image. To use this layout for an article, add both `image` (the image path)
+or using the control with a keyboard; selecting one in the index opens it. Image cards otherwise start closed,
+and opening or closing one scrolls back to its top. On phones, the preview image appears above the text; on wider
+screens, the expanded text wraps around the image. To use this layout for an article, add both `image` (the image path)
 and `imageAlt` (a description of the image) to its entry in `campaign-articles-data.js`.
 Article cards cycle through 20 color themes; long plain-text blocks are displayed in shorter
 paragraphs when sentence segmentation is available. Existing specially formatted articles retain
