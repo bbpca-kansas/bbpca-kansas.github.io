@@ -41,6 +41,10 @@ does not load anything from Google Fonts.
 
 Page views are measured with GoatCounter using the `bbpconsumeradvocates` site.
 
+The site footer includes a legal disclaimer explaining that BBPCA provides general information,
+not legal advice or legal services, and that visiting or contacting the group does not create an
+attorney-client relationship.
+
 ## Contact and campaign links
 
 - Email: [bbpconsumeradvocates@gmail.com](mailto:bbpconsumeradvocates@gmail.com)
