@@ -56,7 +56,8 @@
 
     card.classList.add("article-card--text");
     const isInfographic = article.type === "infographic";
-    if (isInfographic) card.classList.add("article-card--infographic");
+    const hasImage = isInfographic || article.image !== undefined || article.imageAlt !== undefined;
+    if (hasImage) card.classList.add("article-card--with-image");
     card.id = `article-${article.post}`;
     if (Number(article.post) % 2 === 0) card.classList.add("article-card--sans-title");
 
@@ -87,15 +88,22 @@
     title.textContent = article.title;
     content.append(title);
 
-    if (isInfographic) {
-      if (!article.image || !article.imageAlt) {
-        throw new Error(`Infographic ${article.post} is missing its image or alt text.`);
+    let textContent = content;
+    if (hasImage) {
+      if (typeof article.image !== "string" || !article.image.trim()
+          || typeof article.imageAlt !== "string" || !article.imageAlt.trim()) {
+        throw new Error(`Article or infographic ${article.post} is missing its image or alt text.`);
       }
+      const layout = document.createElement("div");
+      layout.className = "article-image-layout";
       const image = document.createElement("img");
       image.src = article.image;
       image.alt = article.imageAlt;
       image.loading = "lazy";
-      content.append(image);
+      textContent = document.createElement("div");
+      textContent.className = "article-image-text";
+      layout.append(image, textContent);
+      content.append(layout);
     }
 
     const preview = article.paragraphs.find((paragraph, index) =>
@@ -108,13 +116,14 @@
       excerpt.textContent = trimmedPreview.length > 200
         ? `${trimmedPreview.slice(0, 197).replace(/\s+\S*$/, "")}…`
         : trimmedPreview;
-      content.append(excerpt);
+      textContent.append(excerpt);
     }
 
     const details = document.createElement("details");
     if (article.paragraphs.length) {
       const summary = document.createElement("summary");
-      summary.textContent = isInfographic ? "Read the comment" : "Read full article";
+      const summaryText = document.createTextNode(hasImage ? "See more" : "Read full article");
+      summary.append(summaryText);
       details.append(summary);
 
       const body = document.createElement("div");
@@ -141,8 +150,23 @@
         }
       }
       details.append(body);
-      details.addEventListener("toggle", () => card.classList.toggle("article-card--expanded", details.open));
-      content.append(details);
+      details.addEventListener("toggle", () => {
+        card.classList.toggle("article-card--expanded", details.open);
+        if (hasImage) {
+          summaryText.textContent = details.open
+            ? (isInfographic ? "Close the comment" : "Close the article")
+            : "See more";
+        }
+      });
+      if (hasImage) {
+        card.addEventListener("click", (event) => {
+          if (!(event.target instanceof Element)) return;
+          if (event.target.closest("a, button, summary, input, select, textarea, [contenteditable='true']")) return;
+          if (window.getSelection()?.toString()) return;
+          details.open = !details.open;
+        });
+      }
+      textContent.append(details);
     }
     if (sourcedPosts.has(article.post)) {
       const sourceLink = document.createElement("a");
