@@ -797,8 +797,14 @@ h2 em {
 }
 
 .article-card--infographic img {
+  width: 25%;
   height: auto;
   margin-bottom: 1rem;
+  transition: width 180ms ease;
+}
+
+.article-card--infographic.article-card--expanded img {
+  width: 100%;
 }
 
 .article-excerpt {
