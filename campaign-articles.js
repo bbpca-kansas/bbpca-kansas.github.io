@@ -156,6 +156,7 @@
           summaryText.textContent = details.open
             ? (isInfographic ? "Close the comment" : "Close the article")
             : "See more";
+          card.scrollIntoView({ block: "start" });
         }
       });
       if (hasImage) {
@@ -307,7 +308,7 @@
     renderIndex();
     update();
     const details = card.querySelector("details");
-    if (details) details.open = true;
+    if (details && !card.classList.contains("article-card--with-image")) details.open = true;
     card.scrollIntoView({ block: "start" });
   };
   window.addEventListener("hashchange", openLinkedArticle);

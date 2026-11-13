@@ -809,6 +809,7 @@ h2 em {
 
 .article-card--with-image {
   cursor: pointer;
+  scroll-margin-top: 1rem;
 }
 
 .article-card--expanded .article-image-layout {
