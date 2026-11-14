@@ -1,5 +1,65 @@
 window.articleSources = [
   {
+    "post": "69",
+    "sources": [
+      {
+        "name": "Kansas Justice Institute: Sugaring case overview and court filings",
+        "url": "https://kansasjusticeinstitute.org/case/sugaring/",
+        "supports": "Case overview, the plaintiff's position, and links to court filings in Bryn Green v. Kansas State Board of Cosmetology."
+      },
+      {
+        "name": "Kansas State Board of Cosmetology: Defendants' motion for summary judgment",
+        "url": "https://kansasjusticeinstitute.org/wp-content/uploads/2026/06/228-KBOC-MSJ.pdf",
+        "supports": "The defendants' arguments in their motion for summary judgment."
+      },
+      {
+        "name": "The Topeka Capital-Journal: Constitutional framing of the sugaring lawsuit",
+        "url": "https://www.cjonline.com/story/news/politics/government/2024/11/14/kansas-anti-regulation-lawsuit-on-sugaring-hair-removal-first-step/76226207007/",
+        "supports": "Reporting on the lawsuit and its constitutional arguments, November 14, 2024."
+      },
+      {
+        "name": "The Topeka Capital-Journal: Sugaring and public safety concerns",
+        "url": "https://www.cjonline.com/story/news/politics/government/2024/03/27/sugaring-pubic-hair-removal-technique-could-go-unlicensed-in-kansas/73099669007/",
+        "supports": "Reporting on the 2024 legislative debate over sugaring."
+      },
+      {
+        "name": "Kansas Justice Institute: Voluntary dismissal of threading lawsuit",
+        "url": "https://kansasjusticeinstitute.org/wp-content/uploads/2022/07/91-voluntary-dismissal-pursuant-to-stipuation-1.pdf",
+        "supports": "The July 2022 voluntary dismissal in the eyebrow-threading case."
+      },
+      {
+        "name": "Kansas Legislature: 2022 Senate Bill 348",
+        "url": "https://www.kslegislature.gov/li_2022/b2021_22/measures/sb348/",
+        "supports": "The legislative record for the threading exemption."
+      },
+      {
+        "name": "Governor Laura Kelly: Veto message for SB 434",
+        "url": "https://www.sos.ks.gov/publications/sessionlaws/2024/Message-04-SB-434.html",
+        "supports": "The Governor's stated reasons for vetoing the 2024 sugaring bill."
+      },
+      {
+        "name": "Kansas Legislature: 2025–2026 Senate Bill 30",
+        "url": "https://www.kslegislature.gov/b2025_26/bills/sb30/",
+        "supports": "SB 30's text and legislative history."
+      },
+      {
+        "name": "The Hutchinson News: Founding of the Kansas Justice Institute",
+        "url": "https://www.hutchnews.com/story/news/local/2017/05/01/envisioned-kansas-justice-institute-would/20735597007/",
+        "supports": "Reporting on the establishment of KJI in 2017."
+      },
+      {
+        "name": "USA TODAY: Koch network and occupational licensing",
+        "url": "https://www.usatoday.com/story/news/politics/2015/12/09/charles-kochs-network-plans-take-aim-job-licensing-laws/77037506/",
+        "supports": "Reporting on a national campaign regarding occupational licensing."
+      },
+      {
+        "name": "Institute for Justice: Kansas occupational licensing litigation",
+        "url": "https://ij.org/issues/economic-liberty/occupational-licensing/kansas/",
+        "supports": "The organization's Kansas occupational licensing cases and perspective."
+      }
+    ]
+  },
+  {
     "post": "62",
     "sources": [
       {
