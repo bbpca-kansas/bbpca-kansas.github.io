@@ -82,6 +82,11 @@
       date.dateTime = article.postedAt;
       date.textContent = article.postedLabel;
       content.append(date);
+    } else {
+      const date = document.createElement("p");
+      date.className = "article-posted";
+      date.textContent = "Posting date unavailable";
+      content.append(date);
     }
 
     const title = document.createElement("h3");
@@ -131,7 +136,7 @@
     const details = document.createElement("details");
     if (article.paragraphs.length) {
       const summary = document.createElement("summary");
-      const summaryText = document.createTextNode(hasImage ? "See more" : "Read full article");
+      const summaryText = document.createTextNode("See more");
       summary.append(summaryText);
       details.append(summary);
 
@@ -161,21 +166,17 @@
       details.append(body);
       details.addEventListener("toggle", () => {
         card.classList.toggle("article-card--expanded", details.open);
-        if (hasImage) {
-          summaryText.textContent = details.open
-            ? (isInfographic ? "Close the comment" : "Close the article")
-            : "See more";
-          card.scrollIntoView({ block: "start" });
-        }
+        summaryText.textContent = details.open
+          ? (isInfographic ? "Close the comment" : "Close the article")
+          : "See more";
+        card.scrollIntoView({ block: "start" });
       });
-      if (hasImage) {
-        card.addEventListener("click", (event) => {
-          if (!(event.target instanceof Element)) return;
-          if (event.target.closest("a, button, summary, input, select, textarea, [contenteditable='true']")) return;
-          if (window.getSelection()?.toString()) return;
-          details.open = !details.open;
-        });
-      }
+      card.addEventListener("click", (event) => {
+        if (!(event.target instanceof Element)) return;
+        if (event.target.closest("a, button, summary, input, select, textarea, [contenteditable='true']")) return;
+        if (window.getSelection()?.toString()) return;
+        details.open = !details.open;
+      });
       textContent.append(details);
     }
     if (sourcedPosts.has(article.post)) {
@@ -194,7 +195,8 @@
   gallery.replaceChildren(fragment);
   const PAGE_SIZE = 9;
   const cards = Array.from(gallery.children);
-  let shown = PAGE_SIZE;
+  const articleByPost = new Map(window.campaignArticles.map((article) => [article.post, article]));
+  let currentPage = 1;
   let updatePaging = () => {};
 
   const indexList = document.querySelector("#article-index-list");
@@ -215,22 +217,31 @@
   let renderIndex = () => {};
 
   if (indexList instanceof HTMLElement && sortSelect instanceof HTMLSelectElement) {
-    const original = window.campaignArticles.map((article, position) => ({ article, position }));
     const sorters = {
-      views: (a, b) => a.position - b.position,
-      number: (a, b) => Number(a.article.post) - Number(b.article.post),
-      az: (a, b) => a.article.title.localeCompare(b.article.title, undefined, { sensitivity: "base" }),
-      za: (a, b) => b.article.title.localeCompare(a.article.title, undefined, { sensitivity: "base" }),
+      newest: (a, b) => {
+        if (!a.postedAt) return b.postedAt ? 1 : 0;
+        if (!b.postedAt) return -1;
+        return b.postedAt.localeCompare(a.postedAt);
+      },
+      number: (a, b) => Number(a.post) - Number(b.post),
+      az: (a, b) => a.title.localeCompare(b.title, undefined, { sensitivity: "base" }),
+      za: (a, b) => b.title.localeCompare(a.title, undefined, { sensitivity: "base" }),
+    };
+
+    const sortCards = () => {
+      const compare = sorters[sortSelect.value] || sorters.newest;
+      cards.sort((a, b) => compare(articleByPost.get(a.dataset.post), articleByPost.get(b.dataset.post)));
+      gallery.replaceChildren(...cards);
     };
 
     renderIndex = () => {
-      const items = original.filter(({ article }) => matches(article)).sort(sorters[sortSelect.value] || sorters.views);
+      const items = cards.map((card) => articleByPost.get(card.dataset.post)).filter(matches);
       if (statusLine instanceof HTMLElement) {
         statusLine.textContent = isFiltering()
-          ? `${items.length} of ${original.length} articles and infographics match.`
+          ? `${items.length} of ${cards.length} articles and infographics match.`
           : "";
       }
-      indexList.replaceChildren(...items.map(({ article }) => {
+      indexList.replaceChildren(...items.map((article) => {
         const item = document.createElement("li");
         item.value = Number(article.post);
         const link = document.createElement("a");
@@ -240,7 +251,8 @@
           event.preventDefault();
           const card = cards.find((c) => c.dataset.post === article.post);
           if (!card) return;
-          shown = Math.max(shown, cards.indexOf(card) + 1);
+          const matchingCards = cards.filter((c) => matches(articleByPost.get(c.dataset.post)));
+          currentPage = Math.floor(matchingCards.indexOf(card) / PAGE_SIZE) + 1;
           updatePaging();
           const details = card.querySelector("details");
           if (details) details.open = true;
@@ -251,55 +263,72 @@
       }));
     };
 
-    sortSelect.addEventListener("change", renderIndex);
+    sortSelect.addEventListener("change", () => {
+      currentPage = 1;
+      sortCards();
+      renderIndex();
+      updatePaging();
+    });
+    sortCards();
     renderIndex();
   }
 
   gallery.replaceChildren(...cards);
   gallery.className = "article-grid";
 
-  const articleByPost = new Map(window.campaignArticles.map((article) => [article.post, article]));
-  let more = null;
-  let status = null;
-  let button = null;
+  const pagination = document.createElement("div");
+  pagination.className = "article-more";
+  const status = document.createElement("p");
+  status.setAttribute("role", "status");
+  const navigation = document.createElement("nav");
+  navigation.className = "article-pagination";
+  navigation.setAttribute("aria-label", "Article and infographic pages");
+
+  const makePageButton = (label, page, accessibleLabel) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.textContent = label;
+    button.setAttribute("aria-label", accessibleLabel);
+    button.addEventListener("click", () => {
+      currentPage = typeof page === "function" ? page() : page;
+      update();
+      gallery.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+    return button;
+  };
+  const previous = makePageButton("Previous", () => currentPage - 1, "Previous page");
+  const next = makePageButton("Next", () => currentPage + 1, "Next page");
+  const pageButtons = Array.from({ length: Math.ceil(cards.length / PAGE_SIZE) }, (_, index) =>
+    makePageButton(String(index + 1), index + 1, `Page ${index + 1}`),
+  );
+  navigation.append(previous, ...pageButtons, next);
+  pagination.append(status, navigation);
+  gallery.after(pagination);
 
   const update = () => {
-    if (isFiltering()) {
-      cards.forEach((card) => { card.hidden = !matches(articleByPost.get(card.dataset.post)); });
-      if (more) more.hidden = true;
-      return;
-    }
-    cards.forEach((card, i) => { card.hidden = i >= shown; });
-    if (!more) return;
-    const remaining = cards.length - shown;
-    status.textContent = `Showing ${Math.min(shown, cards.length)} of ${cards.length} articles and infographics`;
-    button.textContent = `Show ${Math.max(0, Math.min(PAGE_SIZE, remaining))} more`;
-    more.hidden = false;
-    button.hidden = remaining <= 0;
+    const matchingCards = cards.filter((card) => matches(articleByPost.get(card.dataset.post)));
+    const totalPages = Math.ceil(matchingCards.length / PAGE_SIZE);
+    currentPage = Math.max(1, Math.min(currentPage, totalPages));
+    const start = (currentPage - 1) * PAGE_SIZE;
+    const visibleCards = new Set(matchingCards.slice(start, start + PAGE_SIZE));
+    cards.forEach((card) => { card.hidden = !visibleCards.has(card); });
+    status.textContent = matchingCards.length
+      ? `Showing ${start + 1}–${Math.min(start + PAGE_SIZE, matchingCards.length)} of ${matchingCards.length} articles and infographics · Page ${currentPage} of ${totalPages}`
+      : "No articles or infographics match.";
+    navigation.hidden = totalPages <= 1;
+    previous.disabled = currentPage === 1;
+    next.disabled = currentPage >= totalPages;
+    pageButtons.forEach((button, index) => {
+      button.hidden = index >= totalPages;
+      if (index + 1 === currentPage) button.setAttribute("aria-current", "page");
+      else button.removeAttribute("aria-current");
+    });
   };
   updatePaging = update;
-
-  if (cards.length > PAGE_SIZE) {
-    more = document.createElement("div");
-    more.className = "article-more";
-
-    status = document.createElement("p");
-    status.setAttribute("role", "status");
-    button = document.createElement("button");
-    button.type = "button";
-    button.className = "button button-dark";
-
-    button.addEventListener("click", () => {
-      shown += PAGE_SIZE;
-      update();
-    });
-
-    more.append(status, button);
-    gallery.after(more);
-  }
   update();
 
   const onFilterChange = () => {
+    currentPage = 1;
     renderIndex();
     update();
   };
@@ -313,7 +342,7 @@
     if (!card) return;
     if (searchInput instanceof HTMLInputElement) searchInput.value = "";
     if (topicSelect instanceof HTMLSelectElement) topicSelect.value = "";
-    shown = Math.max(shown, cards.indexOf(card) + 1);
+    currentPage = Math.floor(cards.indexOf(card) / PAGE_SIZE) + 1;
     renderIndex();
     update();
     const details = card.querySelector("details");
