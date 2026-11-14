@@ -31,6 +31,8 @@ article-by-article citations are on `resources.html`; the publisher filter appli
 cards, topic filtering narrows resource cards, and article filtering narrows article-source entries.
 Search covers resource cards and article-source entries. The SB 30 fact sheet is available at
 `fact-sheet.html` with links to primary sources.
+`consumer-watch.html` is a manually maintained, dated legislative watch with links to its sources;
+review its dates, bill statuses, and citations when updating it.
 
 Archived article images are kept out of the website in `archive/article-images/`, with the article-to-image
 mapping in `archive/article-images.json`. The deploy workflow excludes `archive/`.
