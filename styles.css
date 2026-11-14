@@ -924,7 +924,6 @@ h2 em {
   cursor: default;
 }
 
-.article-share-toggle,
 .article-share-actions button,
 .article-share-actions a {
   display: inline-block;
@@ -940,7 +939,6 @@ h2 em {
   text-decoration: none;
 }
 
-.article-share-toggle:hover,
 .article-share-actions button:hover,
 .article-share-actions a:hover {
   background: var(--paper-deep);
@@ -951,12 +949,6 @@ h2 em {
   outline-offset: 3px;
 }
 
-.article-share-panel {
-  margin-top: 0.75rem;
-}
-
-.article-share-panel[hidden],
-.article-share-actions button[hidden],
 .article-share input[hidden] {
   display: none;
 }
@@ -967,7 +959,6 @@ h2 em {
   gap: 0.5rem;
 }
 
-.article-share-note,
 .article-share-status {
   margin: 0.6rem 0 0;
   color: var(--muted-ink);

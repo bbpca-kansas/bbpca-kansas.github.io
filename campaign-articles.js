@@ -54,39 +54,8 @@
     const url = `https://bbpca-kansas.github.io/share/${article.post}.html`;
     const share = document.createElement("div");
     share.className = "article-share";
-    const toggle = document.createElement("button");
-    toggle.type = "button";
-    toggle.className = "article-share-toggle";
-    toggle.textContent = "Share";
-    toggle.setAttribute("aria-expanded", "false");
-    toggle.setAttribute("aria-label", `Share ${article.title}`);
-    const panel = document.createElement("div");
-    panel.className = "article-share-panel";
-    panel.hidden = true;
-    panel.id = `share-options-${article.post}`;
-    toggle.setAttribute("aria-controls", panel.id);
-
     const links = document.createElement("div");
     links.className = "article-share-actions";
-    const addLink = (label, href, newTab = false) => {
-      const link = document.createElement("a");
-      link.textContent = label;
-      link.href = href;
-      if (newTab) {
-        link.target = "_blank";
-        link.rel = "noopener noreferrer";
-      }
-      links.append(link);
-      return link;
-    };
-    const addButton = (label, action) => {
-      const button = document.createElement("button");
-      button.type = "button";
-      button.textContent = label;
-      button.addEventListener("click", action);
-      links.append(button);
-      return button;
-    };
     const status = document.createElement("p");
     status.className = "article-share-status";
     status.setAttribute("role", "status");
@@ -97,10 +66,11 @@
     manualLink.hidden = true;
     manualLink.setAttribute("aria-label", `Share link for ${article.title}`);
 
-    addLink("Facebook", `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, true);
-    addLink("Email", `mailto:?subject=${encodeURIComponent(article.title)}&body=${encodeURIComponent(`${article.title}\n${url}`)}`);
-    addLink("Text", `sms:?body=${encodeURIComponent(`${article.title}\n${url}`)}`);
-    addButton("Copy link", async () => {
+    const copy = document.createElement("button");
+    copy.type = "button";
+    copy.textContent = "Copy link";
+    copy.setAttribute("aria-label", `Copy link for ${article.title}`);
+    copy.addEventListener("click", async () => {
       try {
         if (!navigator.clipboard?.writeText) throw new Error("Clipboard access is unavailable.");
         await navigator.clipboard.writeText(url);
@@ -113,74 +83,16 @@
         status.textContent = "Could not copy automatically. Select and copy the link below.";
       }
     });
+    links.append(copy);
 
-    const shareError = (error) => {
-      if (error.name === "AbortError") {
-        status.textContent = "Sharing canceled.";
-      } else {
-        console.error("Could not open device sharing:", error);
-        status.textContent = "Could not open device sharing. Try another sharing option.";
-      }
-    };
-    if (typeof navigator.share === "function") {
-      addButton("More sharing options", async () => {
-        try {
-          await navigator.share({ title: article.title, url });
-        } catch (error) {
-          shareError(error);
-        }
-      });
-    }
-
-    let prepareImage;
     if (isInfographic) {
-      const download = addLink("Download image", article.image);
+      const download = document.createElement("a");
+      download.textContent = "Download image";
+      download.href = article.image;
       download.download = "";
-      if (typeof navigator.share === "function" && typeof navigator.canShare === "function"
-          && typeof File === "function") {
-        let imageFile;
-        let loading = false;
-        const imageButton = addButton("Share image", async () => {
-          try {
-            await navigator.share({ files: [imageFile], title: article.title });
-          } catch (error) {
-            shareError(error);
-          }
-        });
-        imageButton.hidden = true;
-        prepareImage = async () => {
-          if (loading || imageFile) return;
-          loading = true;
-          try {
-            const response = await fetch(article.image);
-            if (!response.ok) throw new Error(`Image request failed (${response.status}).`);
-            const blob = await response.blob();
-            const file = new File([blob], article.image.split("/").pop(), { type: blob.type });
-            if (navigator.canShare({ files: [file] })) {
-              imageFile = file;
-              imageButton.hidden = false;
-            }
-          } catch (error) {
-            console.error("Could not prepare the infographic for sharing:", error);
-            status.textContent = "Could not prepare image sharing. Use Download image instead.";
-          } finally {
-            loading = false;
-          }
-        };
-      }
+      links.append(download);
     }
-    const note = document.createElement("p");
-    note.className = "article-share-note";
-    note.textContent = isInfographic
-      ? "For Instagram, use device sharing if available or download the image."
-      : "Instagram sharing depends on your device and app.";
-    panel.append(links, note, status, manualLink);
-    toggle.addEventListener("click", () => {
-      panel.hidden = !panel.hidden;
-      toggle.setAttribute("aria-expanded", String(!panel.hidden));
-      if (!panel.hidden && prepareImage) prepareImage();
-    });
-    share.append(toggle, panel);
+    share.append(links, status, manualLink);
     return share;
   };
 
