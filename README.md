@@ -51,7 +51,12 @@ mapping in `archive/article-images.json`. The deploy workflow excludes `archive/
 The site's fonts (DM Sans and Playfair Display) are self-hosted in `assets/fonts/`, so the page
 does not load anything from Google Fonts.
 
-Page views are measured with GoatCounter using the `bbpconsumeradvocates` site.
+GoatCounter measures page views on the homepage, resource library, Consumer Watch, and Advocacy
+Action Center. Events count article openings, copy-link clicks, action-button clicks, and external
+resource-link clicks; action clicks do not confirm form submissions. Event names use public titles
+and identifiers, not form entries or search terms. URLs with query strings are not tracked, and
+page-view referrers are limited to their origin. Blockers or unavailable analytics can prevent counts.
+Run `node --test tests/analytics.test.cjs` to check event tracking.
 
 The site footer includes a legal disclaimer explaining that BBPCA provides general information,
 not legal advice or legal services, and that visiting or contacting the group does not create an
