@@ -1,5 +1,86 @@
 window.campaignArticles = [
   {
+    "post": "68",
+    "type": "infographic",
+    "image": "assets/infographic-68.jpg",
+    "imageAlt": "Two-panel comic contrasts a slogan to eliminate licensing requirements with a cosmetologist asking whether she can practice law without meeting standards. A banner says, Keep beauty services regulated in Kansas.",
+    "postedAt": "2026-11-13T16:58",
+    "postedLabel": "Posted Friday, November 13, 2026 at 4:58 p.m.",
+    "title": "Unnecessary Licensing?",
+    "paragraphs": [
+      "\"Eliminate unnecessary licensing requirements!\" sounds like a nice political slogan until you look at the reality. We wouldn't let someone walk straight out of a classroom and practice law or medicine without meeting strict, proven standards. Professional cosmetology and barbering involve chemical handling, consumer health, and complex sanitation. It is a serious trade that deserves serious regulation."
+    ]
+  },
+  {
+    "post": "67",
+    "type": "infographic",
+    "image": "assets/infographic-67.jpg",
+    "imageAlt": "Comic-style illustration titled The Kansas Legislature, showing a cosmetologist addressing legislators and a message about protecting professional standards and keeping beauty services regulated in Kansas.",
+    "postedAt": "2026-11-12T20:18",
+    "postedLabel": "Posted Thursday, November 12, 2026 at 8:18 p.m.",
+    "title": "The Kansas Legislature",
+    "paragraphs": [
+      "Every time a licensed professional goes to Topeka to explain the high health and sanitation standards required in our industry, someone in the legislature just wants to pull out the scissors and cut them.",
+      "Professional standards exist to protect your health, your skin, and your safety.",
+      "Let's stop letting politicians cut the safety rules that keep our communities safe."
+    ]
+  },
+  {
+    "post": "66",
+    "type": "infographic",
+    "image": "assets/infographic-66.jpg",
+    "imageAlt": "Comic-style graphic showing a cosmetology student overwhelmed by training subjects and another student saying 1,500 hours wasn't enough to feel ready.",
+    "postedAt": "2026-11-12T13:41",
+    "postedLabel": "Posted Thursday, November 12, 2026 at 1:41 p.m.",
+    "title": "The 1,500-Hour Trap",
+    "paragraphs": [
+      "Mastering hair, skin, and nails safely within a 1,500-hour curriculum is already incredibly difficult.",
+      "Cutting those critical hours down even further doesn't help students—it traps them. Forcing students into the workforce before they feel ready or properly trained is unfair to them and risky for consumers.",
+      "True consumer safety demands real, thorough education, not rushed shortcuts."
+    ]
+  },
+  {
+    "post": "65",
+    "type": "infographic",
+    "image": "assets/infographic-65.jpg",
+    "imageAlt": "Comic-style graphic titled The Corporate Bully, showing a lobbyist and legislator discussing cuts to trade school hours while a licensed professional asks why industry experts were excluded.",
+    "postedAt": "2026-11-11T13:43",
+    "postedLabel": "Posted Wednesday, November 11, 2026 at 1:43 p.m.",
+    "title": "The Corporate Bully",
+    "paragraphs": [
+      "Corporate interest groups want to rewrite the rules for our local trade schools. Why? Because they care about corporate profits, not public safety. They pay high-priced lobbyists to whisper in politicians' ears, completely cutting out the real licensed trade experts and consumers who actually understand the industry. We can't let big money bully our local services."
+    ]
+  },
+  {
+    "post": "64",
+    "type": "infographic",
+    "image": "assets/infographic-64.jpg",
+    "imageAlt": "Cream-colored graphic encouraging Kansas barbers and cosmetologists, with checkmarks for clear consumer information, professional representation, and fair standards.",
+    "postedAt": "2026-11-10T14:44",
+    "postedLabel": "Posted Tuesday, November 10, 2026 at 2:44 p.m.",
+    "title": "To Every Licensed Barber and Cosmetologist in Kansas",
+    "paragraphs": [
+      "Your skill, training, and dedication matter. You uphold standards. You protect clients. You keep the craft alive.",
+      "BBPCA stands with you.",
+      "Clear information for consumers. A real voice for licensed professionals. Strong, fair standards that honor your work.",
+      "You deserve to be respected, represented, and heard.",
+      "Keep showing up with excellence. We see you. We're with you."
+    ]
+  },
+  {
+    "post": "63",
+    "type": "infographic",
+    "image": "assets/infographic-63.jpg",
+    "imageAlt": "Cream-colored graphic decorated with scissors and a comb. It reads: Apparently some beauty services in Kansas require less disclosure than a fast-food menu. We’re just out here asking for a little more transparency and a seat at the table for the licensed pros. Help our cause if that doesn't sound crazy to you.",
+    "postedAt": "2026-11-09",
+    "postedLabel": "Posted Monday, November 9, 2026",
+    "title": "Apparently Some Beauty Services in Kansas Require Less Disclosure Than a Fast-Food Menu",
+    "paragraphs": [
+      "Apparently some beauty services in Kansas require less disclosure than a fast-food menu. We're just out here asking for a little more transparency and a seat at the table for the licensed pros. Add your name to this cause here: Consumer Right to Know"
+    ],
+    "html": "<p>Apparently some beauty services in Kansas require less disclosure than a fast-food menu. We're just out here asking for a little more transparency and a seat at the table for the licensed pros. Add your name to this cause here: <a class=\"article-link-label\" href=\"https://forms.gle/LZQEFXADwpzTBkRp9\" target=\"_blank\" rel=\"noopener noreferrer\">Consumer Right to Know</a></p>"
+  },
+  {
     "post": "62",
     "title": "The \"Economic Barrier\" Myth: Why Beauty Licensing Matters in Kansas",
     "postedAt": "2026-11-06T16:27",
