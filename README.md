@@ -26,10 +26,9 @@ Long plain-text blocks are displayed in shorter paragraphs when sentence segment
 Existing specially formatted articles retain their markup. Articles with source lists link directly to
 their sources and back.
 
-Each card has Facebook, email, text, and copy-link options. On supported devices, the share menu
-also offers device sharing; infographic cards offer an image download and, where supported, image
-sharing. Instagram availability depends on the device and app. Facebook and other services decide
-how to display or cache previews.
+Each card has a copy-link button for sharing the article in Facebook, email, messages, or other
+services. Infographic cards also offer an image download. Facebook and other services decide how
+to display or cache previews.
 
 The Pages workflow runs `node scripts/generate-share-pages.cjs _site` to create a separate preview
 page for each card from `campaign-articles-data.js`. Article previews use the BBPCA social image;
