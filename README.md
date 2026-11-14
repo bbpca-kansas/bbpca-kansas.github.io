@@ -14,7 +14,7 @@ available at:
 ## Local preview
 
 Open `index.html` in a web browser. The site uses static HTML, CSS, and JavaScript; no package
-installation or build step is required.
+installation or build step is required for the main pages.
 
 The **From the campaign** section displays articles and infographics newest first by default.
 The index and cards can also be sorted by number or title, and page controls show nine entries per page.
@@ -25,6 +25,18 @@ the index opens it. Image cards place the image above the text. To add an image 
 Long plain-text blocks are displayed in shorter paragraphs when sentence segmentation is available.
 Existing specially formatted articles retain their markup. Articles with source lists link directly to
 their sources and back.
+
+Each card has Facebook, email, text, and copy-link options. On supported devices, the share menu
+also offers device sharing; infographic cards offer an image download and, where supported, image
+sharing. Instagram availability depends on the device and app. Facebook and other services decide
+how to display or cache previews.
+
+The Pages workflow runs `node scripts/generate-share-pages.cjs _site` to create a separate preview
+page for each card from `campaign-articles-data.js`. Article previews use the BBPCA social image;
+infographic previews use their own image. Shared links point to the public site and open the
+corresponding card. To generate preview pages locally, install Node.js and run
+`node scripts/generate-share-pages.cjs`; the generated `share/` directory is ignored by Git.
+Run `node --test tests/share-pages.test.cjs` to check preview generation.
 
 The homepage shows selected news and resources. The complete searchable resource catalog and
 article-by-article citations are on `resources.html`; the publisher filter applies to resource

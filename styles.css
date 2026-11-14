@@ -919,6 +919,71 @@ h2 em {
   white-space: nowrap;
 }
 
+.article-share {
+  margin-top: 1rem;
+  cursor: default;
+}
+
+.article-share-toggle,
+.article-share-actions button,
+.article-share-actions a {
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--green-deep);
+  border-radius: 5px;
+  background: var(--paper);
+  color: var(--green-deep);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.article-share-toggle:hover,
+.article-share-actions button:hover,
+.article-share-actions a:hover {
+  background: var(--paper-deep);
+}
+
+.article-share :is(button, a, input):focus-visible {
+  outline: 3px solid var(--coral);
+  outline-offset: 3px;
+}
+
+.article-share-panel {
+  margin-top: 0.75rem;
+}
+
+.article-share-panel[hidden],
+.article-share-actions button[hidden],
+.article-share input[hidden] {
+  display: none;
+}
+
+.article-share-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.article-share-note,
+.article-share-status {
+  margin: 0.6rem 0 0;
+  color: var(--muted-ink);
+  font-size: 0.85rem;
+}
+
+.article-share-status:empty {
+  display: none;
+}
+
+.article-share input {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+}
+
 .article-excerpt {
   display: -webkit-box;
   margin: 0 0 1rem;

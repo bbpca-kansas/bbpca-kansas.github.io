@@ -31,6 +31,7 @@ jobs:
         run: |
           mkdir _site
           rsync -a --exclude='.git' --exclude='.github' --exclude='archive' --exclude='_site' ./ _site/
+          node scripts/generate-share-pages.cjs _site
       - name: Upload website
         uses: actions/upload-pages-artifact@v3
         with:
