@@ -803,8 +803,27 @@ h2 em {
   gap: 1rem;
 }
 
+.article-card--with-image.article-card--landscape .article-image-layout {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.article-card--with-image.article-card--portrait .article-image-layout {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.article-card--with-image.article-card--portrait .article-image-layout img {
+  width: auto;
+  max-width: 12rem;
+  max-height: 16rem;
+  justify-self: center;
+}
+
 .article-card--with-image.article-card--expanded {
   grid-column: 1 / -1;
+}
+
+.article-card--with-image.article-card--expanded.article-card--portrait {
+  grid-column: auto;
 }
 
 .article-card--with-image {
@@ -814,6 +833,16 @@ h2 em {
 
 .article-card--expanded .article-image-layout {
   display: flow-root;
+}
+
+.article-card--expanded.article-card--landscape .article-image-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.article-card--expanded.article-card--portrait .article-image-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .article-card--with-image .article-image-layout img {
@@ -829,6 +858,20 @@ h2 em {
   float: left;
   width: calc(50% - 0.5rem);
   margin: 0 1rem 1rem 0;
+}
+
+.article-card--expanded.article-card--landscape .article-image-layout img {
+  float: none;
+  width: 100%;
+  margin: 0 0 1rem;
+}
+
+.article-card--expanded.article-card--portrait .article-image-layout img {
+  float: none;
+  width: auto;
+  max-width: 12rem;
+  max-height: 16rem;
+  margin: 0 auto 1rem;
 }
 
 .article-card--expanded .article-image-text summary {
@@ -956,6 +999,12 @@ h2 em {
 
 .article-rich p {
   margin: 0 0 0.9rem;
+}
+
+.article-rich .article-link-label {
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
 }
 
 .article-rich ul,

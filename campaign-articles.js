@@ -97,9 +97,18 @@
       const layout = document.createElement("div");
       layout.className = "article-image-layout";
       const image = document.createElement("img");
+      const updateImageOrientation = () => {
+        if (image.naturalWidth && image.naturalHeight) {
+          const isLandscape = image.naturalWidth > image.naturalHeight;
+          card.classList.toggle("article-card--landscape", isLandscape);
+          card.classList.toggle("article-card--portrait", image.naturalHeight > image.naturalWidth);
+        }
+      };
+      image.addEventListener("load", updateImageOrientation, { once: true });
       image.src = article.image;
       image.alt = article.imageAlt;
       image.loading = "lazy";
+      if (image.complete) updateImageOrientation();
       textContent = document.createElement("div");
       textContent.className = "article-image-text";
       layout.append(image, textContent);
