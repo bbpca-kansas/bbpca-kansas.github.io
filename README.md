@@ -65,5 +65,5 @@ attorney-client relationship.
 ## Contact and campaign links
 
 - Email: [bbpconsumeradvocates@gmail.com](mailto:bbpconsumeradvocates@gmail.com)
-- Advocacy Action Center: `advocacy-action-center.html` (four actions link to Google Forms; `petitions.html` redirects here)
+- Advocacy Action Center: `advocacy-action-center.html` (nine actions link to Google Forms; `petitions.html` redirects here)
 - Facebook: [Kansas Beauty and Barber Professionals Consumer Advocates](https://www.facebook.com/people/Kansas-Beauty-and-Barber-Professionals/61594822378441/)

@@ -122,6 +122,11 @@ summary:focus-visible {
   font-weight: 600;
 }
 
+.home-page .desktop-nav {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
 .desktop-nav a:not(.nav-cta),
 .back-top {
   transition: color 160ms ease;
@@ -1433,6 +1438,32 @@ h2 em {
 .contact-note a {
   text-decoration: underline;
   text-underline-offset: 0.22em;
+}
+
+.mailing-list-section {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 3rem 7.1%;
+}
+
+.mailing-list-card {
+  max-width: 790px;
+  margin: 0 auto;
+  padding: 2rem;
+  border: 1px solid rgba(23, 26, 30, 0.1);
+  border-radius: 0.65rem;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(23, 26, 30, 0.07);
+}
+
+.mailing-list-card h2 {
+  margin: 1rem 0;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+}
+
+.mailing-list-card > p:not(.eyebrow) {
+  color: var(--muted-ink);
+  line-height: 1.7;
 }
 
 .site-footer {
